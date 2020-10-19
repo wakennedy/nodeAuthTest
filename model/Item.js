@@ -1,24 +1,26 @@
 const mongoose = require("mongoose");
-const itemSchema = require("model/Item.js")
 
-const userSchema = new mongoose.Schema({
-  email: {
+const itemSchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
-    min: 6,
     max: 255,
   },
-  password: {
+  description: {
     type: String,
     required: true,
     max: 1024,
     min: 6,
   },
-  books: [ itemSchema ],
+  category: {
+      type: String,
+      required: true,
+      max: 1024
+  },
   date: {
     type: Date,
     default: Date.now,
   },
 });
  
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("Item", itemSchema);

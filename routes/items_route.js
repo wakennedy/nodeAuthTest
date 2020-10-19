@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../model/User");
+const Item = require("../model/Item");
 const verify = require("./verifyToken");
 
 router.get("/", verify, (req, res) => {
